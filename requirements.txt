@@ -1,0 +1,31 @@
+# Web Framework
+Flask==3.1.1
+flask-cors==5.0.1
+flask-limiter==3.12
+
+# Validation
+marshmallow==3.25.1
+
+# HTTP Client
+requests==2.32.3
+
+# ML
+scikit-learn==1.6.1
+pandas==2.2.3
+numpy==2.2.5
+joblib==1.4.2
+
+# Cache
+redis==5.3.0
+
+# Background Jobs
+APScheduler==3.11.0
+
+# Config
+python-dotenv==1.1.0
+
+# Production Server
+gunicorn==23.0.0
+
+# Logging
+structlog==25.1.0
