@@ -3,8 +3,7 @@ version: "3.9"
 services:
   redis:
     image: redis:7-alpine
-    ports:
-      - "6379:6379"
+    restart: unless-stopped
     volumes:
       - redis_data:/data
     healthcheck:
@@ -17,26 +16,29 @@ services:
     build:
       context: ..
       dockerfile: docker/Dockerfile
-    ports:
-      - "5000:5000"
+    restart: unless-stopped
     env_file:
       - ../.env
     environment:
       - REDIS_URL=redis://redis:6379/0
+      - CACHE_ENABLED=1
+      - SCHEDULER_ENABLED=1
     depends_on:
       redis:
         condition: service_healthy
     volumes:
-      - ../data/artifacts:/app/data/artifacts:ro
+      - movie_data:/app/data
 
   frontend:
     build:
       context: ../frontend
       dockerfile: Dockerfile
+    restart: unless-stopped
     ports:
-      - "3000:80"
+      - "80:80"
     depends_on:
       - backend
 
 volumes:
   redis_data:
+  movie_data:
