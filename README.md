@@ -123,8 +123,8 @@ All list endpoints support optional preference filters:
 ### 1. Clone and configure
 
 ```bash
-git clone https://github.com/deepanshu-talan/scalable-movie-recommendation-system.git
-cd scalable-movie-recommendation-system
+git clone https://github.com/deepanshu-talan/movie-recommender-api.git
+cd movie-recommender-api
 cp .env.example .env
 # Edit .env and add your TMDB_API_KEY
 ```

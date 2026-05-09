@@ -25,7 +25,7 @@ yum install -y git
 
 # 5. Clone the repository
 cd /home/ec2-user
-git clone https://github.com/deepanshu-talan/scalable-movie-recommendation-system.git app
+git clone https://github.com/deepanshu-talan/movie-recommender-api.git app
 cd app
 
 # 6. Create .env file (REPLACE THE PLACEHOLDER WITH YOUR ACTUAL KEY)
